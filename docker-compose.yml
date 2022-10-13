@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  eureka-server:
+    container_name: eurekaServer
+    ports:
+      - "8761:8761"
+    build: ./
+    environment:
+      - spring.application.name=eureka-discovery
+      - eureka.instance.hostname=localhost
+      - eureka.client.register-with-eureka=false
+      - eureka.client.fetch-registry=false
